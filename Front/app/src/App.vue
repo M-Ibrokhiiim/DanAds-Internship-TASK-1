@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
 
 // Variables 
 const greating = ref<string | boolean>(true)
@@ -143,7 +144,7 @@ console.log(student, user)
 </script>
 
 <template>
-   
+   <HelloWorld/>
    <h1>This is Vue + Vite + TS project</h1>
 </template>
 
