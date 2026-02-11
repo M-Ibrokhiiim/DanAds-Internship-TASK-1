@@ -145,7 +145,7 @@ console.log(student, user)
 
 <template>
    <HelloWorld/>
-   <h1>This is Vue + Vite + TS project</h1>
+   <h1 >This is Vue + Vite + TS project</h1>
 </template>
 
 <style scoped>
