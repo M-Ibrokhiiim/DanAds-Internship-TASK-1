@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/Week2-Api-Wrapper.vue';
 
 // Variables 
 const greating = ref<string | boolean>(true)
@@ -144,8 +144,9 @@ console.log(student, user)
 </script>
 
 <template>
-   <HelloWorld/>
-   <h1 >This is Vue + Vite + TS project</h1>
+  <div class="border-[10px] p-10 rounded-2xl border-blue-300">
+    <HelloWorld/>
+  </div>
 </template>
 
 <style scoped>
