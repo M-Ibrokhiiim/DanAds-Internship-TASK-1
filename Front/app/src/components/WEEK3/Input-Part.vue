@@ -3,6 +3,7 @@
     <div class="flex justify-center items-center text-center  ml-[20px ]">
       <input 
       autofocus
+      @keydown.enter="addTask(input)"
       v-model="input"
       placeholder = "Type..."
       class="border-2 p-2 w-[350px] h-[40px] outline-none border-blue-400 rounded-md text-[20px] pl-[10px]"
