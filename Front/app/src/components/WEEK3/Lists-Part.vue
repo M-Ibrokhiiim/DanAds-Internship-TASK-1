@@ -1,6 +1,6 @@
 <template>
  <p class="h-[1.5px] w-[450px] mt-[40px] bg-blue-200"></p>
-  <div class="mt-[20px]  h-[40vh]  overflow-scroll">
+  <div class="mt-[20px]  h-[35vh]  overflow-scroll">
      <ol class=" mt-[10px]" v-for="(item,index) in listTasks" :key="item.id">
         <div class="flex w-[460px] items-center justify-between">
           <li class="text-[20px]">{{index+1}}. {{ item.name }}</li>

@@ -4,7 +4,7 @@ import Week3 from './components/WEEK3/Foundation.vue'
 </script>
 
 <template>
-  <div class="border-[10px] p-10 rounded-2xl border-blue-300 mb-5">
+  <div class="border-[10px] p-10 rounded-2xl border-blue-300 mb-5 relative">
     <Week3/>
   </div>
   <div class="border-[10px] p-10 rounded-2xl border-blue-300">
