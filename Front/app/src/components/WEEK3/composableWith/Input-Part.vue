@@ -1,6 +1,6 @@
 <template>
      <REMINDER/>
-     <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[20px]">TO-DO</h1>
+     <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[10px]">TO-DO</h1>
     <div class="flex justify-center items-center text-center  ml-[20px ]">
       <input 
       autofocus
@@ -21,8 +21,8 @@
 </template>
 <script setup lang="ts" >
 import { ref,provide } from 'vue';
-import useTODO  from '../../composables/useTodoActions'
-import REMINDER from '../WEEK-TAG/REMINDER.vue';
+import useTODO from '../../../composables/useTodoActions';
+import REMINDER from '../../WEEK-TAG/REMINDER.vue';
 
 const { input,addTask } = useTODO()
 const reminderMSG = ref<string>('Project developed depend on how to use composables feature of Vue 3.')

@@ -15,7 +15,6 @@ export function useProducts() {
     const getProducts = async ()=>{
         loading.value = true
         try {
-            
             const res= await fetch('https://api.muncha.uz/api/products/v1/categories/tree')
             const arr:Category[] = await res.json()
             

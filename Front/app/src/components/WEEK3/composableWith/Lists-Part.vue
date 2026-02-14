@@ -12,10 +12,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import useTODO from '../../composables/useTodoActions';
+import useTODO from '../../../composables/useTodoActions';
 
 const {listTasks, removeTask} = useTODO()
-
-
-   
 </script>

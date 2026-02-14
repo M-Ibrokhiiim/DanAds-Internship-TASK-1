@@ -1,5 +1,5 @@
 <template>
- <div  class="w-[100%] flex justify-end  -ml-5">
+ <div  class="w-[100%] flex justify-end  -ml-6">
       <p @click="isOpen = true" class="w-[25px] border-[2px] mt-4 cursor-pointer transition-all active:scale-75 duration-75 border-blue-300 h-[25px] text-center flex justify-center items-center rounded-[100px]">
         <QuestionMark/>
       </p>
