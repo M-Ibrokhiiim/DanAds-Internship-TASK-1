@@ -29,6 +29,7 @@ export default function useTODO(){
         const newTask =  ref<Items>({id:listTasks.value.length+1, name:task})
 
         listTasks.value.push(newTask.value)
+        listTasks.value.reverse()
         input.value = undefined
     }
 
