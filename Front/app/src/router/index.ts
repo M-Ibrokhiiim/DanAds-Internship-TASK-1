@@ -20,4 +20,16 @@ const router = createRouter({
   routes
 });
 
+router.beforeEach((to, from, next) => {
+  const isLogged: boolean = true;  
+  
+
+  if (to.meta.requiresAuth && isLogged) {
+    next('/loginPage'); 
+  } else {
+    next(); 
+  }
+});
+
+
 export default router;
