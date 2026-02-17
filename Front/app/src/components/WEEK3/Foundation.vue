@@ -1,9 +1,9 @@
 <template>
-  <TAG :tag="tag" />
+  <TagForWeek :tag="tag" />
 
   <header class="flex justify-center">
     <div class="w-[60%] flex justify-around font-sans mb-2">
-      <router-link to="/composable" active-class="underline" class="cursor-pointer">
+      <router-link to="/" active-class="underline" class="cursor-pointer">
         Composables
       </router-link>
       <span class="text-blue-200">|</span>
@@ -19,14 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import TAG from '../WEEK-TAG/TAG.vue'
+import { ref  } from 'vue'
+import TagForWeek from '../tags/TagForWeeks.vue'
 
-const router = useRouter()
 const tag = ref('week3')
-
-onMounted(() => {
-  router.push('/composable')
-})
 </script>

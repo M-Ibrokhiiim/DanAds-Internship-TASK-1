@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Week2 from './components/Week2-Api-Wrapper.vue'
-import Week3 from './components/WEEK3/Foundation.vue'
+import Week2 from './components/Week2ApiWrapperTask.vue'
+import Week3 from './components/week3/Foundation.vue'
 </script>
 
 <template>

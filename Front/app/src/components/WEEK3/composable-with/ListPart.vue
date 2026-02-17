@@ -11,7 +11,7 @@
                  text-center focus:outline-none border-none transition-all duration-75 
                  active:scale-50"
         >
-          <p class="text-xl mt-[-2px]">x</p>
+          <span class="text-xl mt-[-2px]">x</span>
         </button>
       </div>
     </ol>

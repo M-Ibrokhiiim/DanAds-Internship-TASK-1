@@ -1,21 +1,23 @@
 <template>
-  <REMINDER />
+  <div class="absolute left-[38.5vw] w-[70px]">
+    <Reminder />
+  </div>
 
-  <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[10px]">
+  <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[40px]">
     TO-DO
   </h1>
 
   <div class="flex justify-center items-center text-center ml-[20px]">
     <input
-      v-model="input"
+      v-model="newTask"
       autofocus
-      @keydown.enter="addTask(input)"
+      @keypress.enter="addNewTasktoLists(newTask)"
       placeholder="Type..."
       class="border-2 p-2 w-[350px] h-[40px] outline-none border-blue-400 rounded-md text-[20px] pl-[10px]"
     />
 
     <button
-      @click="addTask(input)"
+      @click="addNewTasktoLists(newTask)"
       class="bg-blue-400 ml-2 h-[40px] w-[100px] text-center text-[25px] font-semibold 
              flex items-center justify-center text-white outline-none border-none 
              transition-all duration-100 active:scale-75"
@@ -27,13 +29,16 @@
 
 <script setup lang="ts">
 import { ref, provide } from 'vue'
-import useTODO from '../../../composables/useTodoActions'
-import REMINDER from '../../WEEK-TAG/REMINDER.vue'
+import Reminder from '../../tags/Reminder.vue'
 
-const { input, addTask } = useTODO()
-const reminderMSG = ref<string>(
-  'Project developed depend on how to use composables feature of Vue 3.'
-)
+const emits = defineEmits(['newTask'])
+const newTask = ref<string | undefined>()
 
-provide('msg', reminderMSG)
+function addNewTasktoLists(task: string | undefined) {
+  if (task?.trim() === '') return
+  emits('newTask', task)
+  newTask.value = undefined
+}
+
+provide('msg', 'Project developed depend only Vue 3 concepts.')
 </script>

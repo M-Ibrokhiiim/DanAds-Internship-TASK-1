@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useProducts } from '../composables/useProductsAPI'
-import TAG from './WEEK-TAG/TAG.vue'
+import TagForWeek from './tags/TagForWeeks.vue'
 
 const { loading, getProducts, data } = useProducts()
 const tag = ref<string>('week2')
@@ -13,7 +13,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <TAG :tag="tag" />
+    <TagForWeek :tag="tag" />
     <h1 class="mb-10" v-if="loading">API wrapper is working here ...</h1>
     <h1 v-else v-for="product in data" :key="product.id">
       <a :href="product.path">{{ product.name.RU }}</a>

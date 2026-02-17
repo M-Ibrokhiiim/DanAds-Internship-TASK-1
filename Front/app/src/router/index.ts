@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import ComposeWith from '../components/WEEK3/composableWith/ComposeWith.vue';
-import FoundationConcepts from '../components/WEEK3/conceptsWith/FoundationConcepts.vue';
+import ComposeWith from '../components/week3/composable-with/ComposeWith.vue';
+import FoundationConcepts from '../components/week3/concepts-with/FoundationConcepts.vue';
 
 const routes = [
   {
-    path: '/composable',
+    path: '/',
     name: 'Composable',
     component: ComposeWith
   },
