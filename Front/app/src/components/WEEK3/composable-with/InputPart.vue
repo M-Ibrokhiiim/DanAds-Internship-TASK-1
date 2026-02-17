@@ -1,5 +1,5 @@
 <template>
-  <Reminder />
+   <component :is="Reminder"/>
 
   <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[10px]">
     TO-DO

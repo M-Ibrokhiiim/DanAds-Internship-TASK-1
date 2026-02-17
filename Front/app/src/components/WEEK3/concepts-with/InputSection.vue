@@ -1,6 +1,6 @@
 <template>
   <div class="absolute left-[38.5vw] w-[70px]">
-    <Reminder />
+    <component :is="Reminder" />
   </div>
 
   <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[40px]">
