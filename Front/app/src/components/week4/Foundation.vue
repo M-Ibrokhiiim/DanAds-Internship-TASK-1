@@ -6,9 +6,9 @@
         {{ msg }}
       </p>
 
-      <div class="w-[200px] h-[150px] flex flex-col gap-6 justify-center  bg-red-300">
+      <div class="w-[200px] h-[150px] flex flex-col gap-6 justify-center">
         <p class="text-xl">{{ count }}</p>
-      <div class="bg-blue-200 flex justify-around">
+      <div class="flex justify-around">
         <button @click="decreaseCount" v-designbutton>-</button>
         <button @click="increaseCount" v-designbutton>+</button>
        </div>
