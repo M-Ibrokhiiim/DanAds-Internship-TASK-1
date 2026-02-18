@@ -2,7 +2,7 @@
     <TagForWeeks :tag="'Week 4'"/>
     <div class="w-full h-[200px]">
       <GlobalCompToApp/>
-      <p class>
+      <p class v-bgchange v-changecontent="true">
         {{ msg }}
       </p>
     </div>
