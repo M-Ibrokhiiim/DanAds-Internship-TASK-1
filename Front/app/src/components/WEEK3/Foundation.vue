@@ -22,5 +22,5 @@
 import { ref  } from 'vue'
 import TagForWeek from '../tags/TagForWeeks.vue'
 
-const tag = ref('week3')
+const tag = ref('week 3')
 </script>

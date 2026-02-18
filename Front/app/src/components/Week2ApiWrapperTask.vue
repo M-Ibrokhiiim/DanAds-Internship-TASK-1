@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted} from 'vue'
 import { useProducts } from '../composables/useProductsAPI'
 import TagForWeek from './tags/TagForWeeks.vue'
 
 const { loading, getProducts, data } = useProducts()
-const tag = ref<string>('week2')
+const tag = ref<string>('week 2')
 
 onMounted(() => {
   getProducts()
