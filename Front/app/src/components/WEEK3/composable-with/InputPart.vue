@@ -1,6 +1,8 @@
 <template>
-   <component :is="Reminder"/>
-
+  <Transition>
+    <component :is="Reminder"/>
+  </Transition>
+   
   <h1 class="font-bold font-serif text-[35px] text-blue-400 mb-[30px] mt-[10px]">
     TO-DO
   </h1>
@@ -26,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, provide } from 'vue'
+import { ref, provide, Transition } from 'vue'
 import useTODO from '../../../composables/useTodoActions'
 import Reminder from '../../tags/Reminder.vue'
 
