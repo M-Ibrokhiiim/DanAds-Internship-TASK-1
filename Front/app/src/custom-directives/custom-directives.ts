@@ -16,3 +16,9 @@ export const changeContent:Directive = {
         }
     }
 }
+
+export const buttonDesign:Directive = {
+    mounted(el){
+        el.style.border = '2px solid black'
+    }
+}

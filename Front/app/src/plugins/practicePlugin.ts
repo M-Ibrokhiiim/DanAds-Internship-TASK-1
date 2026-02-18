@@ -1,5 +1,5 @@
 import GlobalCompToApp from "./GlobalCompToApp.vue"
-import { changeBG, changeContent } from "../custom-directives/custom-directives"
+import { changeBG, changeContent, buttonDesign } from "../custom-directives/custom-directives"
 
 
 export default{
@@ -8,5 +8,6 @@ export default{
     app.component('GlobalComp', GlobalCompToApp)
     app.directive('bgchange',changeBG)
     app.directive('changecontent',changeContent)
+    app.directive('designbutton',buttonDesign)
 }
 }
