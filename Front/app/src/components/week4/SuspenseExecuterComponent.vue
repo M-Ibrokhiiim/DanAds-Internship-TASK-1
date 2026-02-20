@@ -1,33 +1,34 @@
 <template>
-    <!-- <button
+  <button
         class="mb-[20px] bg-blue-300 text-white 
         border-none outline-none focus:outline-none
         shadow-xl
         "> 
-          <span v-if="!isVisibleTab"  class="bg-red-200" @click="pageController('Page')">Open Tab</span>
-          <span v-else-if="isVisiblePage" @click="pageController('Tab')">Open Page</span>
-    </button> -->
+          <span v-if="!isVisibleTab"    @click="()=>isVisibleTab = !isVisibleTab">Open Page</span>
+          <span v-else @click="()=>isVisibleTab = !isVisibleTab">Open Tabs</span>
+    </button> 
         
-    <transition name="fade"  > 
-        <!-- <slot v-if="isVisible"></slot>  -->
-         
-         <div >
+    <transition name="fade"> 
+        
+           <div v-show="!isVisibleTab" v-if="!isVisibleTab" >
             <div class=" w-[20vw] flex justify-around ml-[10vw] mb-[50px]">
 
                  <a 
                  @click="tabsSwiter(1)"
                  class="h-[20px] flex items-center cursor-pointer" 
                  :class="isTab1Checked ? 'underline' :'' "
-                 >Register</a>
+                 >
+                 Register
+                </a>
                  <a 
                  @click="tabsSwiter(2)"
                  class="h-[20px] flex items-center cursor-pointer"
                  :class="isTab2Checked ? 'underline' :'' "
-                 >Setting</a>
+                 >
+                 Setting
+                </a>
 
             </div>
-            
-
             
              <transition name="fade">
                 <keep-alive>
@@ -36,6 +37,9 @@
              </transition>
             
          </div>
+
+         <slot v-else></slot> 
+         
     </transition>
 </template>
 <script setup lang="ts">
@@ -46,6 +50,7 @@ import Tab2 from './tabs/Tab2.vue';
 const isTab1Checked = ref<boolean>(false)
 const isTab2Checked = ref<boolean>(false)
 const isVisible = ref<boolean>(false)
+const isVisibleTab = ref<boolean>(false)    
     
 const activeComponent = ref()
 
