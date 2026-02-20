@@ -29,7 +29,7 @@
             
 
             
-             <transition name="tabs">
+             <transition name="fade">
                 <keep-alive>
                     <component :is="activeComponent" v-show="isVisible"/>     
                 </keep-alive>
@@ -81,7 +81,7 @@ onMounted(()=>{
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .fade-enter-from {

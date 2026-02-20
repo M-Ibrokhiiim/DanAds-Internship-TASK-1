@@ -45,7 +45,7 @@
       <input
         v-model="settings.notifications"
         type="checkbox"
-        class="h-5 w-5 accent-blue-500"
+        class="h-5 w-5 accent-blue-500 cursor-pointer"
       />
     </div>
 
