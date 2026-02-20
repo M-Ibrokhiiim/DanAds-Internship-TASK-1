@@ -6,11 +6,10 @@
         "> 
           <span v-if="!isVisibleTab"    @click="()=>isVisibleTab = !isVisibleTab">Open Page</span>
           <span v-else @click="()=>isVisibleTab = !isVisibleTab">Open Tabs</span>
-    </button> 
+  </button> 
         
-    <transition name="fade"> 
-        
-           <div v-show="!isVisibleTab" v-if="!isVisibleTab" >
+    <transition name="fade">  
+         <div v-show="!isVisibleTab" v-if="!isVisibleTab" >
             <div class=" w-[20vw] flex justify-around ml-[10vw] mb-[50px]">
 
                  <a 
@@ -35,11 +34,8 @@
                     <component :is="activeComponent" v-show="isVisible"/>     
                 </keep-alive>
              </transition>
-            
          </div>
-
-         <slot v-else></slot> 
-         
+         <slot v-else></slot>          
     </transition>
 </template>
 <script setup lang="ts">
@@ -54,8 +50,6 @@ const isVisibleTab = ref<boolean>(false)
     
 const activeComponent = ref()
 
-
- 
 
 // Tabs switcher
 function tabsSwiter(id:number){
@@ -80,7 +74,6 @@ onMounted(()=>{
     isTab1Checked.value = true      
     isVisible.value =true
     activeComponent.value  = Tab1
-
 })
 </script>
 <style scoped>
