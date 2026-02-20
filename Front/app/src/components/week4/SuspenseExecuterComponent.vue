@@ -1,6 +1,6 @@
 <template>
   <button
-        class="mb-[20px] bg-blue-300 text-white 
+        class="mb-[40px] mt-[-20px] bg-blue-300 text-white 
         border-none outline-none focus:outline-none
         shadow-xl
         "> 
