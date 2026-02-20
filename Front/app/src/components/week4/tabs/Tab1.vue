@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, nextTick} from 'vue'
 
 const submitted = ref<boolean>(false)
 
@@ -85,8 +85,12 @@ const submitForm = () => {
   submitted.value = true
   resetForm()
 
-  setTimeout(() => {
-    submitted.value = false
-  }, 2000)
+
+  nextTick(() => {
+      setTimeout(() => {
+        submitted.value = false
+      }, 2000)  
+  })
+  
 }
 </script>

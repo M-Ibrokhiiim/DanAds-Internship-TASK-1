@@ -65,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, nextTick } from 'vue'
 
 const saved = ref<boolean>(false)
 
@@ -78,8 +78,11 @@ const settings = ref({
 const saveSettings = () => {
   saved.value = true
 
-  setTimeout(() => {
-    saved.value = false
-  }, 2000)
+  nextTick(() => {
+      setTimeout(() => {
+      saved.value = false
+    }, 2000)
+  })
+  
 }
 </script>
