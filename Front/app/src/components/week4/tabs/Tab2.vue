@@ -7,7 +7,7 @@
       User Settings
     </h2>
 
-    <!-- Theme -->
+ 
     <div>
       <label class="block text-sm font-medium text-gray-700">
         Theme
@@ -22,7 +22,7 @@
       </select>
     </div>
 
-    <!-- Language -->
+  
     <div>
       <label class="block text-sm font-medium text-gray-700">
         Language
@@ -37,7 +37,7 @@
       </select>
     </div>
 
-    <!-- Notifications -->
+   
     <div class="flex items-center justify-between">
       <label class="text-sm font-medium text-gray-700">
         Enable notifications
@@ -55,7 +55,10 @@
       Save Settings
     </button>
 
-    <p v-if="saved" class="text-green-600 text-sm text-center">
+    <p
+     v-if="saved" 
+     class="text-green-600 text-sm text-center"
+    >
       ✅ Settings saved
     </p>
   </form>
@@ -64,7 +67,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const saved = ref(false)
+const saved = ref<boolean>(false)
 
 const settings = ref({
   theme: 'light',

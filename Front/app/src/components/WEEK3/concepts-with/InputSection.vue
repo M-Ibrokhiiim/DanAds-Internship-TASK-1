@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { ref, provide } from 'vue'
-import Reminder from '../../tags/Reminder.vue'
+import Reminder from '@/components/tags/Reminder.vue'
 
 const emits = defineEmits(['newTask'])
 const newTask = ref<string | undefined>()

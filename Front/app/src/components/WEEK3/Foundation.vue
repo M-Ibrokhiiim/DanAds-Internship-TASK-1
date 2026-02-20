@@ -3,11 +3,19 @@
 
   <header class="flex justify-center">
     <div class="w-[60%] flex justify-around font-sans mb-2">
-      <router-link to="/" active-class="underline" class="cursor-pointer">
+      <router-link 
+        to="/" 
+        active-class="underline" 
+        class="cursor-pointer"
+      >
         Composables
       </router-link>
       <span class="text-blue-200">|</span>
-      <router-link to="/conceptual" active-class="underline" class="cursor-pointer">
+      <router-link 
+        to="/conceptual" 
+        active-class="underline" 
+        class="cursor-pointer"
+      >
         Concepts
       </router-link>
     </div>
@@ -22,5 +30,5 @@
 import { ref  } from 'vue'
 import TagForWeek from '../tags/TagForWeeks.vue'
 
-const tag = ref('week 3')
+const tag = ref<string>('week 3')
 </script>

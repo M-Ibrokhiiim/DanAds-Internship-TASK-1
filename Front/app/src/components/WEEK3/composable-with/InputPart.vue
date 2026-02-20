@@ -29,13 +29,11 @@
 
 <script setup lang="ts">
 import { ref, provide, Transition } from 'vue'
-import useTODO from '../../../composables/useTodoActions'
-import Reminder from '../../tags/Reminder.vue'
+import useTODO from '@/composables/useTodoActions'
+import Reminder from '@/components/tags/Reminder.vue'
 
 const { input, addTask } = useTODO()
-const reminderMSG = ref<string>(
-  'Project developed depend on how to use composables feature of Vue 3.'
-)
+const reminderMSG = ref<string>('Project developed depend on how to use composables feature of Vue 3.')
 
 provide('msg', reminderMSG)
 </script>

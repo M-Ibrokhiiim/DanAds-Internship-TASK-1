@@ -5,7 +5,11 @@
         <SuspenseExecuterComponent>
            <div class="w-full flex flex-col items-center gap-8 ">
         <GlobalCompToApp/>
-        <p class="p-[20px]" v-bgchange v-changecontent="true" >
+        <p 
+          class="p-[20px]" 
+          v-bgchange 
+          v-changecontent="true" 
+        >
           {{ msg }}
         </p>
 
@@ -26,8 +30,8 @@
 </template>
 <script setup lang="ts">
 import { inject } from 'vue'
-import useActions from '../../composables/usePracticeWeek4Actions'
-import GlobalCompToApp from '../../plugins/GlobalCompToApp.vue'
+import useActions from '@/composables/usePracticeWeek4Actions'
+import GlobalCompToApp from '@/plugins/GlobalCompToApp.vue'
 import TagForWeeks from '../tags/TagForWeeks.vue'
 import SuspenseExecuterComponent from './SuspenseExecuterComponent.vue'
 

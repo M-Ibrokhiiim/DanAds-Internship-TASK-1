@@ -7,7 +7,9 @@
         @click="emits('close', false)"
         class="bg-blue-400 focus:outline-none active:outline-none border-none transition-all duration-75 active:scale-75 text-[20px] h-[40px] items-center text-center mt-[4vw]"
       >
-        <p class="-mt-2 text-white">OK</p>
+        <p class="-mt-2 text-white">
+          OK
+        </p>
       </button>
     </div>
   </div>

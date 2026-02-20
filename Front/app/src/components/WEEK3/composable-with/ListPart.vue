@@ -3,7 +3,12 @@
 
   <div class="mt-[20px] h-[35vh] overflow-scroll">
     <transition-group name="list" tag="ul">
-      <ol class="mt-[10px]" v-for="(item, index) in listTasks" :key="item.id">
+      <ol 
+        class="mt-[10px]" 
+        v-for="(item, index) in listTasks" 
+        :key="item.id"
+        >
+
         <div class="flex w-[460px] items-center justify-between">
           <li class="text-[20px]">{{ index + 1 }}. {{ item.name }}</li>
           <button
@@ -21,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import useTODO from '../../../composables/useTodoActions'
+import useTODO from '@/composables/useTodoActions';
 
 const { listTasks, removeTask } = useTODO()
 </script>

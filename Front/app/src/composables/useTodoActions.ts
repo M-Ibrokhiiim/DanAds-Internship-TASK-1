@@ -12,19 +12,19 @@ type Input = string |undefined
 const input = ref<Input>()
 const listTasks = ref<Items[]>([])
 
-export default function useTODO(){
+export default function useTODO() {
     const removeTask = (id:number):void =>{listTasks.value = listTasks.value.filter((item:Items)=>item.id !==id)}
 
-    const addTask = (task:string|undefined) =>{
-        const isExist = listTasks.value.some((item:Items) =>{
+    const addTask = (task:string|undefined) => {
+        const isExist = listTasks.value.some((item:Items) => {
             return item.name?.trim() === task?.trim()
         })
 
-        if(isExist){
+        if(isExist) {
             return input.value =''
         }   
 
-        if(task === undefined) return
+        if(!task) return
 
         const newTask =  ref<Items>({id:listTasks.value.length+1, name:task})
 

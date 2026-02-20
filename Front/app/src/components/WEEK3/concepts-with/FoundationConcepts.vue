@@ -1,7 +1,10 @@
 <template>
   <div>
     <InputSection @new-task="handleNewTask" />
-    <ListSection :listTasks="listTasks" @removal-task="removeTask" />
+    <ListSection 
+       :listTasks="listTasks" 
+       @removal-task="removeTask" 
+    />
   </div>
 </template>
 

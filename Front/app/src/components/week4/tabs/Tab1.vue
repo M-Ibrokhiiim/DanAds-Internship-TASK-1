@@ -7,8 +7,7 @@
       Contact Us
     </h2>
 
-    <!-- Name -->
-    <div>
+     <div>
       <label class="block text-sm font-medium text-gray-700">
         Name
       </label>
@@ -20,7 +19,7 @@
       />
     </div>
 
-    <!-- Email -->
+     
     <div>
       <label class="block text-sm font-medium text-gray-700">
         Email
@@ -33,7 +32,7 @@
       />
     </div>
 
-    <!-- Message -->
+    
     <div>
       <label class="block text-sm font-medium text-gray-700">
         Message
@@ -52,7 +51,10 @@
       Submit
     </button>
 
-    <p v-if="submitted" class="text-green-600 text-sm text-center">
+    <p 
+      v-if="submitted" 
+      class="text-green-600 text-sm text-center"
+    >
       ✅ Form submitted successfully!
     </p>
   </form>
@@ -61,7 +63,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const submitted = ref(false)
+const submitted = ref<boolean>(false)
 
 const form = ref({
   name: '',

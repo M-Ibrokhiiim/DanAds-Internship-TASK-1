@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import QuestionMark from '../../icons/Question-mark.vue'
+import QuestionMark from '@/icons/Question-mark.vue'
 import CautionModal from './CautionModal.vue'
 
 const isOpen = ref<boolean>(false)

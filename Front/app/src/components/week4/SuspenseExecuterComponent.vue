@@ -52,7 +52,7 @@ const activeComponent = ref()
 
 
 // Tabs switcher
-function tabsSwiter(id:number){
+function tabsSwiter(id:number) {
      if(id ===1){
         isTab1Checked.value = true  
         isTab2Checked.value = false
@@ -70,7 +70,7 @@ function tabsSwiter(id:number){
  
 await new Promise(resolve => setTimeout(resolve, 1000))   
 
-onMounted(()=>{
+onMounted(() => {
     isTab1Checked.value = true      
     isVisible.value =true
     activeComponent.value  = Tab1
