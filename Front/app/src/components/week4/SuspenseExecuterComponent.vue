@@ -1,24 +1,82 @@
 <template>
-    <button 
-        @click="()=>isVisible=!isVisible" 
+    <!-- <button
         class="mb-[20px] bg-blue-300 text-white 
         border-none outline-none focus:outline-none
         shadow-xl
-        ">
-        <span v-if="!isVisible">Open</span>
-        <span v-else>Close</span>
-    </button>
+        "> 
+          <span v-if="!isVisibleTab"  class="bg-red-200" @click="pageController('Page')">Open Tab</span>
+          <span v-else-if="isVisiblePage" @click="pageController('Tab')">Open Page</span>
+    </button> -->
         
-    <transition name="fade"> 
-        <slot v-if="isVisible"></slot> 
+    <transition name="fade"  > 
+        <!-- <slot v-if="isVisible"></slot>  -->
+         
+         <div >
+            <div class=" w-[20vw] flex justify-around ml-[10vw] mb-[50px]">
+
+                 <a 
+                 @click="tabsSwiter(1)"
+                 class="h-[20px] flex items-center cursor-pointer" 
+                 :class="isTab1Checked ? 'underline' :'' "
+                 >Register</a>
+                 <a 
+                 @click="tabsSwiter(2)"
+                 class="h-[20px] flex items-center cursor-pointer"
+                 :class="isTab2Checked ? 'underline' :'' "
+                 >Setting</a>
+
+            </div>
+            
+
+            
+             <transition name="tabs">
+                <keep-alive>
+                    <component :is="activeComponent" v-show="isVisible"/>     
+                </keep-alive>
+             </transition>
+            
+         </div>
     </transition>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import Tab1 from './tabs/Tab1.vue';
+import Tab2 from './tabs/Tab2.vue';
 
+const isTab1Checked = ref<boolean>(false)
+const isTab2Checked = ref<boolean>(false)
 const isVisible = ref<boolean>(false)
+    
+const activeComponent = ref()
+
+
  
-await new Promise(resolve => setTimeout(resolve, 3000))   
+
+// Tabs switcher
+function tabsSwiter(id:number){
+     if(id ===1){
+        isTab1Checked.value = true  
+        isTab2Checked.value = false
+        
+        isVisible.value =true
+        activeComponent.value  = Tab1
+    }else{
+        isTab1Checked.value = false
+        isTab2Checked.value = true
+        
+        isVisible.value =true
+        activeComponent.value = Tab2
+    }
+}    
+ 
+await new Promise(resolve => setTimeout(resolve, 1000))   
+
+onMounted(()=>{
+    isTab1Checked.value = true      
+    isVisible.value =true
+    activeComponent.value  = Tab1
+
+})
 </script>
 <style scoped>
 .fade-enter-active,
@@ -45,5 +103,6 @@ await new Promise(resolve => setTimeout(resolve, 3000))
   opacity: 0;
   transform: translateY(10px);
 }
+
 </style>
  
