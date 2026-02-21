@@ -1,7 +1,7 @@
 <template>
   <form
     @submit.prevent="submitForm"
-    class="mx-auto max-w-md space-y-5 rounded-xl bg-white p-6 shadow-lg"
+    class="mx-auto max-w-md space-y-5 rounded-xl bg-white p-6 shadow-lg mb-[5px]"
   >
     <h2 class="text-2xl font-semibold text-gray-800">
       Contact Us

@@ -68,7 +68,7 @@ function tabsSwiter(id:number) {
     }
 }    
  
-await new Promise(resolve => setTimeout(resolve, 1000))   
+await new Promise(resolve => setTimeout(resolve, 2500))   
 
 onMounted(() => {
     isTab1Checked.value = true      
