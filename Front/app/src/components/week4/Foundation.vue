@@ -18,7 +18,6 @@
             Dashboard
           </router-link>   
         </nav>
-        <!-- <span class="loader">Load&nbsp;ng</span> --> 
      </div>
      <div>
       <span v-if="!isRouteClicked" class="insight"></span>
