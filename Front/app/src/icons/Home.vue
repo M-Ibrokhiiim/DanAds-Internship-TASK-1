@@ -12,6 +12,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 function homePageNav(){
-  router.push('/dashboard/landing')
+//   router.push('/dashboard/landing')
 }
 </script>
