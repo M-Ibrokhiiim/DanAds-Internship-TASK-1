@@ -12,7 +12,7 @@
           </router-link> |
           <router-link 
             @click = "routeChose"
-            :to =" {name:'Dashboard'}" 
+            :to =" {name:'DashboardHomePage'}" 
             class="w-[130px] rounded-[20px] border  focus:border-blue-400"
           >
             Dashboard

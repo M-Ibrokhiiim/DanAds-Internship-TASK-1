@@ -3,7 +3,7 @@
 
     <header class="bg-white px-4 py-3 flex items-center justify-end shadow-sm">
       <img
-        src="https://randomuser.me/api/portraits/women/44.jpg"
+        src="https://randomuser.me/api/portraits/men/30.jpg"
         class="w-9 h-9 rounded-full"
         alt="user"
       />
