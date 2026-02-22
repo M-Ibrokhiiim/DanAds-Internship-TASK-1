@@ -1,35 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import ComposeWith from '../components/week3/composable-with/ComposeWith.vue';
-import FoundationConcepts from '../components/week3/concepts-with/FoundationConcepts.vue';
-
-const routes = [
-  {
-    path: '/',
-    name: 'Composable',
-    component: ComposeWith
-  },
-  {
-    path: '/conceptual',
-    name: 'Conceptual',
-    component: FoundationConcepts
-  }
-];
-
+import { Week4HeaderRoutes } from './week4.header.routes';
+import { Week3HeaderRoutes } from './week3.header.routes';
+ 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
-});
+  routes: [
+     ...Week3HeaderRoutes,
+     ...Week4HeaderRoutes
+  ]
+})
 
-router.beforeEach((to, from, next) => {
-  const isLogged: boolean = true;  
-  
-
-  if (to.meta.requiresAuth && isLogged) {
-    next('/loginPage'); 
-  } else {
-    next(); 
-  }
-});
-
+ 
 
 export default router;

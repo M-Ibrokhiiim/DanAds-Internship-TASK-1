@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted} from 'vue'
 import { useProducts } from '@/composables/useProductsAPI'
-import TagForWeek from './tags/TagForWeeks.vue'
+import TagForWeeks from '../tags/TagForWeeks.vue'
 
 const { loading, getProducts, data } = useProducts()
 const tag = ref<string>('week 2')
@@ -13,7 +13,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <TagForWeek :tag="tag" />
+    <TagForWeeks :tag="tag" />
     <h1 
       class="mb-10" 
       v-if="loading"

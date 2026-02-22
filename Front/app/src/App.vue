@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Week2 from './components/Week2ApiWrapperTask.vue'
+import Week2 from './components/week2/Week2ApiWrapperTask.vue'
 import Week3 from './components/week3/Foundation.vue'
 import Week4 from './components/week4/Foundation.vue'
 </script>
