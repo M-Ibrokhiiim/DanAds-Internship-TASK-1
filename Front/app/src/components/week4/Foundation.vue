@@ -1,5 +1,5 @@
 <template>
-    <TagForWeeks :tag="'Week 4'"/>
+    <TagForWeeks :tag="'4'"/>
     <FormLayout/>
      <div class=" mb-[30px] flex justify-center">
         <nav class="w-[50%] flex justify-between  font-semibold ">
@@ -15,7 +15,6 @@
      </div>
      <div>
       <span v-if="!isRouteClicked" class="insight"></span>
-
      </div>
      
     <router-view name="week4Layout"></router-view>
@@ -25,24 +24,23 @@ import { onMounted, ref } from 'vue';
 import { useRoute, useRouter}  from 'vue-router'
 import TagForWeeks from '../tags/TagForWeeks.vue'
 import { Week4HeaderRoutes } from '@/router/week4.header.routes';
-
+ 
 const Route = useRoute()
 const router = useRouter()
 const isRouteClicked = ref<boolean>(false)
  
 function routeChose(){
-  if(Route.path == '/form' || '/dashboard'){
+  if(Route.path == '/form' ||  '/dashboard'){
     isRouteClicked.value = true
   }
 
 }
 
-
-
  
 onMounted(()=>{
      router.push('/')
 })
+
 </script>
 <style scoped>   
  

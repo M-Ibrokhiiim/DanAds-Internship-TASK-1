@@ -4,7 +4,7 @@ import { useProducts } from '@/composables/useProductsAPI'
 import TagForWeeks from '../tags/TagForWeeks.vue'
 
 const { loading, getProducts, data } = useProducts()
-const tag = ref<string>('week 2')
+const tag = ref<string>('2')
 
 onMounted(() => {
   getProducts()
