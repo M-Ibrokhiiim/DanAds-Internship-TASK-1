@@ -1,6 +1,6 @@
 import { ref } from "vue"
 
-export const isHomeClicked = ref<boolean>(false)   
+export const isHomeClicked = ref<boolean>(true)   
 export const isFavouritedClicked = ref<boolean>(false)
 export const isLocationClicked = ref<boolean>(false)
 export const isSettingClicked = ref<boolean>(false)

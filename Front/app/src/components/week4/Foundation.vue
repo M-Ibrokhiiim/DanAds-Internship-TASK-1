@@ -4,19 +4,13 @@
      <div class=" mb-[30px] flex justify-center">
         <nav class="w-[50%] flex justify-between  font-semibold ">
           <router-link 
-              @click = "routeChose"
-              :to =" {name:'FormLayout'}" 
-              class="w-[130px] rounded-[20px] border  focus:border-blue-400"
-          >
-            Form
-          </router-link> |
-          <router-link 
+            v-for="route in Week4HeaderRoutes"
             @click = "routeChose"
-            :to =" {name:'DashboardHomePage'}" 
+            :to ="route.path" 
             class="w-[130px] rounded-[20px] border  focus:border-blue-400"
           >
-            Dashboard
-          </router-link>   
+            {{ route.name }}
+          </router-link> 
         </nav>
      </div>
      <div>
@@ -30,13 +24,14 @@
 import { onMounted, ref } from 'vue';
 import { useRoute, useRouter}  from 'vue-router'
 import TagForWeeks from '../tags/TagForWeeks.vue'
+import { Week4HeaderRoutes } from '@/router/week4.header.routes';
 
-const route = useRoute()
+const Route = useRoute()
 const router = useRouter()
 const isRouteClicked = ref<boolean>(false)
  
 function routeChose(){
-  if(route.path == '/form' || '/dashboard'){
+  if(Route.path == '/form' || '/dashboard'){
     isRouteClicked.value = true
   }
 
@@ -48,9 +43,6 @@ function routeChose(){
 onMounted(()=>{
      router.push('/')
 })
-
-
- 
 </script>
 <style scoped>   
  
