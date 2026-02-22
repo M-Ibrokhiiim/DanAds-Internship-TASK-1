@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import Menu from './components/tags/Menu.vue';
 import Week2 from './components/week2/Week2ApiWrapperTask.vue'
 import Week3 from './components/week3/Foundation.vue'
 import Week4 from './components/week4/Foundation.vue'
 </script>
 
 <template>
-  <div class="border-[10px] p-10 rounded-2xl border-blue-300 mb-5 relative">
+  <div>
+   <Menu/>
+  </div>
+  <div class="border-[10px] p-10 mt-[5vw] rounded-2xl border-blue-300 mb-5 relative">
     <Week4/>
   </div>
 
