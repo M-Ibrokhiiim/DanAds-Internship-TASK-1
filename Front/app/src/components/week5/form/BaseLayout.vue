@@ -10,6 +10,7 @@
                   type="text"
                   class="border rounded-[3px] focus:outline-none pl-[2px]"
                   placeholder="John"
+                  v-model="userStore.newUser.name"
                   />
             </div>
             <div class=" w-[51%] flex justify-between" >
@@ -18,6 +19,7 @@
                   type="text"
                   class="border rounded-[3px] focus:outline-none pl-[2px]"
                   placeholder="Roll"
+                  v-model="userStore.newUser.surname"
                   />
             </div>
             <div class="w-[51%] flex justify-between" >
@@ -27,10 +29,11 @@
                   class="border-[1px]  rounded-[3px] focus:outline-none pl-[2px]"
                   min="0"
                   placeholder="0"
+                  v-model="userStore.newUser.age"
                   />
             </div>
             </main>
-            <button type="submit" @click.prevent="" class="ml-[180px] mt-4 focus:outline-none bg-blue-400 opacity-[0.8] transition-all duration-100 border-none active:scale-75  text-white">Send</button>
+            <button type="submit" @click.prevent="userStore.addUser(userStore.newUser)" class="ml-[180px] mt-4 focus:outline-none bg-blue-400 opacity-[0.8] transition-all duration-100 border-none active:scale-75  text-white">Send</button>
          </div>
         </form>
         <div @click="$emit('isOpenModal', true)" class="absolute top-[20px] right-[140px] cursor-pointer transition-all duration-100 active:scale-50 ">
@@ -39,7 +42,11 @@
      </div>
 </template>
 <script setup lang="ts">
+import { useUsersStore } from '@/stores/usersStoreByCompositionStyle'
 import List from '@/icons/List.vue'
+
+const userStore = useUsersStore()
 const emit = defineEmits(['isOpenModal'])
+
 
 </script>

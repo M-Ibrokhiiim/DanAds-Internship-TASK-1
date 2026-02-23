@@ -1,6 +1,6 @@
 <template>
 <div class="bg-black  fixed w-[100vw] h-[100vh] opacity-[0.5] left-0 top-0 z-[999]"></div>
-<div class="w-[600px] h-[600px] z-[9999] bg-white overflow-hidden top-[170px] left-[30vw] border-[7px]
+<div class="w-[600px] h-[600px] z-[9999] bg-white overflow-hidden top-[140px] left-[30vw] border-[7px]
             border-blue-300 fixed  rounded-tl-[100px] rounded-br-[100px]">
             <div 
              @click="$emit('isOpenModal', false)"
@@ -8,7 +8,7 @@
                 <Cross />
             </div>
             <SearchBar/>
-            <UserList class="absolute top-[150px] left-[50px] mt-4 overflow-scroll"/>
+            <UserList class="absolute top-[150px] left-[50px]  overflow-scroll"/>
             </div>
 </template>
 <script setup lang="ts">
