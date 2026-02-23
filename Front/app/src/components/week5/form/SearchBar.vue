@@ -19,4 +19,5 @@
 import { useUsersStore } from '@/stores/usersStoreByCompositionStyle'
 
 const userStore = useUsersStore()
+
 </script>

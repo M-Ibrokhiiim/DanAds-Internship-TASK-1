@@ -35,16 +35,22 @@ export const useUsersStore = defineStore('usersStore',() => {
     
     function removeUser(id:number) {
         users.value =  users.value?.filter((user:User) => user.id !== id )   
+        foundUsers.value =   foundUsers.value?.filter((user:User) => user.id !== id )   
     }
     
     
     
 watch(searchedUser, ()=>{
     foundUsers.value = users.value?.filter((user: User) =>{
-    return   user.name.trim().toLowerCase().startsWith(searchedUser.value.toLowerCase())
-    })
- })
+      const fullName = [...Array.from(user.name),...Array.from(user.surname)].join('').trim()
+      const query = Array.from(searchedUser.value.toLowerCase()).filter(l =>{
+        return l !== ' '
+      }).join('')
+       
+    return  fullName.toLowerCase().startsWith(query) 
+    }) || []
 
+ })
 
     return{
           users,
