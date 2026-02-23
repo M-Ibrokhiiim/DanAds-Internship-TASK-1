@@ -1,6 +1,6 @@
 import User from '@/icons/User.vue'
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, watch} from 'vue'
 
 interface User {
     id?: number,
@@ -13,6 +13,8 @@ export const useUsersStore = defineStore('usersStore',() => {
     const users = ref<User[] | undefined>([])
     const newUser = ref<User>({img:'', name: '', surname: '', age: 0})
 
+    const searchedUser = ref<string>('')
+    const foundUsers = ref<User[]>([])
 
     function addUser(user?:User) {
         if(!user?.name || !user?.surname || !user?.age) return
@@ -34,13 +36,23 @@ export const useUsersStore = defineStore('usersStore',() => {
     function removeUser(id:number) {
         users.value =  users.value?.filter((user:User) => user.id !== id )   
     }
-
     
+    
+    
+watch(searchedUser, ()=>{
+    foundUsers.value = users.value?.filter((user: User) =>{
+    return   user.name.trim().toLowerCase().startsWith(searchedUser.value.toLowerCase())
+    })
+ })
+
+
     return{
           users,
           newUser,
           addUser,
-          removeUser
+          removeUser,
+          searchedUser,
+          foundUsers
     }
 
 })
