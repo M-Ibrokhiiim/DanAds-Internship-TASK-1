@@ -1,3 +1,4 @@
+import User from '@/icons/User.vue'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
@@ -10,6 +11,7 @@ interface User {
 export const useUsersStore = defineStore('usersStore',() => {
     const users = ref<User[] | undefined>([])
     const newUser = ref<User>({ name: '', surname: '', age: 0})
+
 
     function addUser(user?:User) {
         if(!user?.name || !user?.surname || !user?.age) return
@@ -24,13 +26,17 @@ export const useUsersStore = defineStore('usersStore',() => {
         }
 
     }
+    
+    function removeUser(id:number) {
+        users.value =  users.value?.filter((user:User) => user.id !== id )   
+    }
 
-
+    
     return{
           users,
           newUser,
-          addUser
-
+          addUser,
+          removeUser
     }
 
 })

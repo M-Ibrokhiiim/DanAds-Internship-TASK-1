@@ -9,7 +9,7 @@
             </div>
             <SearchBar/>
             <UserList class="absolute top-[150px] left-[50px]  overflow-scroll"/>
-            </div>
+</div>
 </template>
 <script setup lang="ts">
 import Cross from '@/icons/Cross.vue'
