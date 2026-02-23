@@ -32,10 +32,15 @@
             <button type="submit" @click.prevent="" class="ml-[180px] mt-4 focus:outline-none bg-blue-300 transition-all duration-100 border-none active:scale-75  text-white">Send</button>
          </div>
         </form>
-        <List class="absolute top-[20px] right-[140px] cursor-pointer transition-all duration-100 active:scale-50"/>
+        <div @click="$emit('isOpenModal', true)" class="absolute top-[20px] right-[140px] cursor-pointer transition-all duration-100 active:scale-50 ">
+          <List />
+        </div>
      </div>
 </template>
 <script setup lang="ts">
-import List from '@/icons/List.vue';
+import List from '@/icons/List.vue'
+const emit = defineEmits(['isOpenModal'])
+
+
 
 </script>
