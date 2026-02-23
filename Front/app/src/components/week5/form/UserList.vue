@@ -5,7 +5,7 @@
    :key="user.id"
    class="flex bg-white mb-5 shadow-lg hover:shadow-xl hover:scale-100 scale-95  transition-all  duration-150 cursor-pointer w-[480px] h-[70px] rounded-lg overflow-hidden"> 
     <img 
-      src="https://randomuser.me/api/portraits/men/20.jpg" 
+      :src="user.img" 
       alt="User" 
       class="w-22 h-22 object-cover object-center"
     />
@@ -25,6 +25,9 @@
 <script setup lang="ts">
 import { useUsersStore } from '@/stores/usersStoreByCompositionStyle';
 import Trash from '@/icons/Trash.vue';
+// import User from '@/icons/User.vue';
 
 const userStore = useUsersStore()
+// const randomPic = Math.floor(Math.random() * 100)
+
 </script>
