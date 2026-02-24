@@ -4,10 +4,10 @@
     name="list"
     tag="div"
     class="flex flex-col gap-2"
-    v-if="userStore.searchedUser "
+    v-if="searchedUser "
   >  
   <div
-   v-for="user in userStore.foundUsers"
+   v-for="user in foundUsers"
    :key="user.id"
    class="flex bg-white mb-5 shadow-lg hover:shadow-xl hover:scale-100 scale-95  transition-all  duration-150 cursor-pointer w-[480px] h-[70px] rounded-lg overflow-hidden"> 
     <img 
@@ -21,7 +21,7 @@
       <p class="text-gray-600">Age: {{ user.age }}</p>
     </div>
     <div 
-       @click="userStore.removeUser(user.id!)"
+       @click="removeUser(user.id!)"
        class="absolute right-5 top-[34px] hover:scale-125 " >
       <Trash />
     </div>
@@ -36,7 +36,7 @@
   >
   <div
    
-   v-for="(user, index) in userStore.users"
+   v-for="(user, index) in users"
    :key="index"
    class="flex bg-white mb-5 shadow-lg hover:shadow-xl hover:scale-100 scale-95  transition-all  duration-150 cursor-pointer w-[480px] h-[70px] rounded-lg overflow-hidden"> 
     <img 
@@ -50,7 +50,7 @@
       <p class="text-gray-600">Age: {{ user.age }}</p>
     </div>
     <div 
-       @click="userStore.removeUser(user.id!)"
+       @click="removeUser(user.id!)"
        class="absolute right-5 top-[34px] hover:scale-125 " >
       <Trash />
     </div>
@@ -59,12 +59,14 @@
 </div>
 </template>
 <script setup lang="ts">
-import { useUsersStore } from '@/stores/usersStoreByCompositionStyle';
-import Trash from '@/icons/Trash.vue';
-// import User from '@/icons/User.vue';
+import { useUsersStore } from '@/stores/usersStoreByCompositionStyle'
+import { storeToRefs } from 'pinia'
+import Trash from '@/icons/Trash.vue'
+
 
 const userStore = useUsersStore()
-// const randomPic = Math.floor(Math.random() * 100)
+const { searchedUser, foundUsers, users } = storeToRefs(userStore)
+const { removeUser } = userStore
 
 </script>
 

@@ -2,7 +2,7 @@
     <div class="absolute top-[60px] w-[100%]  flex justify-center">
                 <div class="flex h-[90px] justify-between items-center   w-[80%]">
                     <input 
-                            v-model="userStore.searchedUser"
+                            v-model="searchedUser"
                             type="text" 
                             placeholder="Search..." 
                             class="flex-grow px-4 py-2 text-gray-700 h-[44px]   border-r-0 focus:outline-none border-[2px] border-blue-400 shadow-xl rounded-l-full "
@@ -17,7 +17,9 @@
 </template>
 <script setup lang="ts">
 import { useUsersStore } from '@/stores/usersStoreByCompositionStyle'
+import { storeToRefs }  from 'pinia'
 
 const userStore = useUsersStore()
+const { searchedUser } = storeToRefs(userStore)
 
 </script>

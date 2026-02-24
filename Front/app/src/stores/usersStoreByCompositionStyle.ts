@@ -40,17 +40,17 @@ export const useUsersStore = defineStore('usersStore',() => {
     
     
     
-watch(searchedUser, ()=>{
-    foundUsers.value = users.value?.filter((user: User) =>{
-      const fullName = [...Array.from(user.name),...Array.from(user.surname)].join('').trim()
-      const query = Array.from(searchedUser.value.toLowerCase()).filter(l =>{
-        return l !== ' '
-      }).join('')
-       
-    return  fullName.toLowerCase().startsWith(query) 
-    }) || []
+    watch(searchedUser, ()=> {
+        foundUsers.value = users.value?.filter((user: User) =>{
+        const fullName = [...Array.from(user.name),...Array.from(user.surname)].join('').trim()
 
- })
+        const query = Array.from(searchedUser.value.toLowerCase()).filter(l =>{
+            return l !== ' '
+        }).join('')
+        
+        return  fullName.toLowerCase().startsWith(query) 
+        }) || []
+    })
 
     return{
           users,

@@ -10,7 +10,7 @@
                   type="text"
                   class="border rounded-[3px] focus:outline-none pl-[2px]"
                   placeholder="John"
-                  v-model="userStore.newUser.name"
+                  v-model="newUser.name"
                   />
             </div>
             <div class=" w-[51%] flex justify-between" >
@@ -19,7 +19,7 @@
                   type="text"
                   class="border rounded-[3px] focus:outline-none pl-[2px]"
                   placeholder="Roll"
-                  v-model="userStore.newUser.surname"
+                  v-model="newUser.surname"
                   />
             </div>
             <div class="w-[51%] flex justify-between" >
@@ -29,13 +29,13 @@
                   class="border-[1px]  rounded-[3px] focus:outline-none pl-[2px]"
                   min="0"
                   placeholder="0"
-                  v-model="userStore.newUser.age"
+                  v-model="newUser.age"
                   />
             </div>
             </main>
             <button 
                type="submit" 
-               @click.prevent="userStore.addUser(userStore.newUser)" 
+               @click.prevent="addUser(newUser)" 
                class="ml-[180px] mt-4 focus:outline-none bg-blue-400 opacity-[0.8] transition-all duration-100 border-none active:scale-75  text-white">
                Send
             </button>
@@ -49,10 +49,14 @@
      </div>
 </template>
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
 import { useUsersStore } from '@/stores/usersStoreByCompositionStyle'
 import List from '@/icons/List.vue'
 
-const userStore = useUsersStore()
-const emit = defineEmits(['isOpenModal'])
 
+const userStore = useUsersStore()
+const { newUser } = storeToRefs(userStore)
+const { addUser } = userStore
+
+const emit = defineEmits(['isOpenModal'])
 </script>

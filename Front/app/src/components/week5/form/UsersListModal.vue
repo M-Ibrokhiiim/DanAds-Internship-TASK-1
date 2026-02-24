@@ -21,17 +21,4 @@ import UserList from './UserList.vue';
 const emits = defineEmits([ 'isOpenModal'])
 </script>
 <style scoped>
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-  transform: scale(0.95);
-  transform-origin: center;
-}
-.fade-enter-to, .fade-leave-from {
-  opacity: 1;
-  transform: scale(1);
-}
-.fade-enter-active, .fade-leave-active {
-  transition: all 5s ease;  
-}
 </style>
