@@ -1,17 +1,9 @@
 import  { defineStore } from 'pinia'
+import type { UserOption } from '@/types/useWeek5Types'
 
-interface User {
-    born: number,
-    name: string,
-    surname: string,
-    nickName1: string,
-    nickName2: string,
-    isProgrammer: boolean,
-    newCar?: string
-}
 
 interface State { 
-    user: User
+    user: UserOption
 }
 
 export const usePractice = defineStore('practice', {

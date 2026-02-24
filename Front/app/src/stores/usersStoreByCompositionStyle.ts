@@ -1,14 +1,8 @@
-import User from '@/icons/User.vue'
+import type { User } from "@/types/useWeek5Types"
 import { defineStore } from 'pinia'
 import { ref, watch} from 'vue'
 
-interface User {
-    id?: number,
-    name: string,
-    surname: string,
-    img: string,
-    age: number
-}
+
 export const useUsersStore = defineStore('usersStore',() => {
     const users = ref<User[] | undefined>([])
     const newUser = ref<User>({img:'', name: '', surname: '', age: 0})
