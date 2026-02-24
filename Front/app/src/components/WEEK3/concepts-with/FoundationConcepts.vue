@@ -10,15 +10,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Task } from '@/types/useWeek3Types'
 import InputSection from './InputSection.vue'
 import ListSection from './ListSection.vue'
-
-interface Task {
-  id: number
-  name: string
-  createdAt?: Date
-}
-
+ 
 const listTasks = ref<Task[]>([])
 
 function handleNewTask(payload: string) {
