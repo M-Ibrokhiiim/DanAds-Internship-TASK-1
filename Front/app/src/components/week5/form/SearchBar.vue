@@ -21,5 +21,4 @@ import { storeToRefs }  from 'pinia'
 
 const userStore = useUsersStore()
 const { searchedUser } = storeToRefs(userStore)
-
 </script>

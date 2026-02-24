@@ -10,6 +10,7 @@
             </div>
             <SearchBar/>
             <UserList class="absolute top-[150px] left-[50px]  overflow-scroll"/>
+            <ClearButton/>
 </div>
 
 </template>
@@ -17,6 +18,7 @@
 import Cross from '@/icons/Cross.vue'
 import SearchBar from './SearchBar.vue';
 import UserList from './UserList.vue';
+import ClearButton from '@/components/buttons/ClearButton.vue';
 
 const emits = defineEmits([ 'isOpenModal'])
 </script>

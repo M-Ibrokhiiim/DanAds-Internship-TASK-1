@@ -37,7 +37,11 @@ export const useUsersStore = defineStore('usersStore',() => {
         users.value =  users.value?.filter((user:User) => user.id !== id )   
         foundUsers.value =   foundUsers.value?.filter((user:User) => user.id !== id )   
     }
-    
+
+    function $reset(){
+       users.value = []
+       foundUsers.value = []
+    }
     
     
     watch(searchedUser, ()=> {
@@ -58,7 +62,8 @@ export const useUsersStore = defineStore('usersStore',() => {
           addUser,
           removeUser,
           searchedUser,
-          foundUsers
+          foundUsers,
+          $reset
     }
 
 })
