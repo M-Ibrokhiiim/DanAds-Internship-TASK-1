@@ -1,14 +1,21 @@
 <script setup lang="ts">
-import Menu from './components/tags/Menu.vue';
-import Week2 from './components/week2/Week2ApiWrapperTask.vue'
-import Week3 from './components/week3/Foundation.vue'
-import Week4 from './components/week4/Foundation.vue'
+import Menu  from '@/components/tags/Menu.vue';
+import Week1 from '@/components/week1/Week2ApiWrapperTask.vue'
+import Week3 from '@/components/week3/Foundation.vue'
+import Week4 from '@/components/week4/Foundation.vue'
+import Week5 from '@/components/week5/Foundation.vue'
+import Week2 from './components/week2/vModel.vue';
 </script>
 
 <template>
   <div>
    <Menu/>
   </div>
+
+  <div class="border-[10px] p-10 mt-[5vw] rounded-2xl border-blue-300 mb-[-50px] relative">
+    <Week5/>
+  </div>
+
   <div class="border-[10px] p-10 mt-[5vw] rounded-2xl border-blue-300 mb-5 relative">
     <Week4/>
   </div>
@@ -16,9 +23,14 @@ import Week4 from './components/week4/Foundation.vue'
   <div class="border-[10px] p-10 rounded-2xl border-blue-300 mb-5 relative">
     <Week3/>
   </div>
+
   
-  <div class="border-[10px] p-10 rounded-2xl border-blue-300">
+  <div class="border-[10px] p-10 rounded-2xl border-blue-300 mb-[20px]">
     <Week2/>
+  </div>
+
+  <div class="border-[10px] p-10 rounded-2xl border-blue-300">
+    <Week1/>
   </div>
 </template>
 

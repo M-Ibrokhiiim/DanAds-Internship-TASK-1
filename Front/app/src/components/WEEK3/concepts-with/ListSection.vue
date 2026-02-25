@@ -26,11 +26,7 @@
 </template>
 
 <script setup lang="ts">
-interface Task {
-  id: number
-  name: string
-  createdAt?: Date
-}
+ import type { Task } from '@/types/useWeek3Types'
 
 const props = defineProps({
   listTasks: Array as () => Task[] | undefined

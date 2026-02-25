@@ -30,22 +30,18 @@ const handleModalCloser = (payload: boolean) => {
 }
 </script>
 <style scoped>
-/* Enter & leave active states */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Starting state (enter) & ending state (leave) */
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
 
-/* Ending state (enter) & starting state (leave) */
 .fade-enter-to,
 .fade-leave-from {
   opacity: 1;
 }
-
 </style>

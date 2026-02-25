@@ -50,8 +50,6 @@ const isVisibleTab = ref<boolean>(false)
     
 const activeComponent = ref()
 
-
-// Tabs switcher
 function tabsSwiter(id:number) {
      if(id ===1){
         isTab1Checked.value = true  
