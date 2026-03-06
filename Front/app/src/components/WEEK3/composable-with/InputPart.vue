@@ -7,7 +7,7 @@
     TO-DO
   </h1>
 
-  <div class="flex justify-center items-center text-center ml-[20px]">
+  <div class="flex justify-center items-center text-center ml-[21px]">
     <input
       v-model="input"
       autofocus
